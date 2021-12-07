@@ -23,6 +23,6 @@ int main()
         }
     }
 
-    printf("The smallest element in the array is %d which is present at index %d\n",large,pos);
+    printf("The largest element in the array is %d which is present at index %d\n",large,pos);
     return 0;
 }
