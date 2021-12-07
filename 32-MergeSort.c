@@ -1,15 +1,15 @@
 #include <stdio.h>
 
-void merge(int *, int *, int, int, int);
-void mergesort(int *a, int *b, int low, int high)
+void merge(int [], int [], int, int, int);
+void mergesort(int a[], int b[], int low, int high)
 {
-    int pivot;
+    int mid;
     if (low < high)
     {
-        pivot = (low + high) / 2;
-        mergesort(a, b, low, pivot);
-        mergesort(a, b, pivot + 1, high);
-        merge(a, b, low, pivot, high);
+        mid = (low + high) / 2;
+        mergesort(a, b, low, mid);
+        mergesort(a, b, mid + 1, high);
+        merge(a, b, low, mid, high);
     }
 }
 
@@ -25,7 +25,7 @@ int main()
     printf("\n");
 }
 
-void merge(int *a, int *b, int low, int pivot, int high)
+void merge(int a[], int b[], int low, int pivot, int high)
 {
     int h, i, j, k;
     h = low;
